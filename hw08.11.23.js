@@ -175,4 +175,4 @@
 // 3
 // let halfIndex = Math.ceil(countries.length / 2);
 // let firstHalf = countries.slice(0, halfIndex);
-// let secondHalf = countries.slice(halfIndex);
+// let secondHalf = countries.slice(halfIndex); 
