@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript for Everyone:DOM</title>
+  <style>
+    .completed {
+      background-color: green;
+    }
+    .ongoing {
+      background-color: yellow;
+    }
+    .coming {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Asabeneh Yetayeh challenges in 2020</h1>
+    <h2>30DaysOfJavaScript Challenge</h2>
+    <ul id="challengeList">
+      <li class="completed">30DaysOfPython Challenge Done</li>
+      <li class="ongoing">30DaysOfJavaScript Challenge Ongoing</li>
+      <li class="coming">30DaysOfReact Challenge Coming</li>
+      <li class="coming">30DaysOfFullStack Challenge Coming</li>
+      <li class="coming">30DaysOfDataAnalysis Challenge Coming</li>
+      <li class="coming">30DaysOfReactNative Challenge Coming</li>
+      <li class="coming">30DaysOfMachineLearning Challenge Coming</li>
+    </ul>
+  </div>
+
+  <script>
+    const challenges = document.querySelectorAll('#challengeList li');
+    let yearColorIndex = 0;
+    let dateTimeBgIndex = 0;
+
+    setInterval(() => {
+      const colors = ['red', 'blue', 'green', 'orange', 'purple'];
+      document.body.style.color = colors[yearColorIndex];
+      yearColorIndex = (yearColorIndex + 1) % colors.length;
+    }, 1000);
+
+    setInterval(() => {
+      const colors = ['cyan', 'magenta', 'yellow', 'pink', 'skyblue'];
+      const dateTime = new Date().toLocaleString();
+      document.body.style.backgroundColor = colors[dateTimeBgIndex];
+      document.body.innerHTML = `
+        <div class="wrapper">
+          <h1>Asabeneh Yetayeh challenges in 2020</h1>
+          <h2>30DaysOfJavaScript Challenge</h2>
+          <p style="background-color:${colors[dateTimeBgIndex]}">${dateTime}</p>
+          <ul id="challengeList"></ul>
+        </div>
+      `;
+      dateTimeBgIndex = (dateTimeBgIndex + 1) % colors.length;
+
+      challenges.forEach((challenge, index) => {
+        if (challenge.classList.contains('completed')) {
+          challenge.style.backgroundColor = 'green';
+        } else if (challenge.classList.contains('ongoing')) {
+          challenge.style.backgroundColor = 'yellow';
+        } else {
+          challenge.style.backgroundColor = 'red';
+        }
+      });
+    }, 1000);
+  </script>
+</body>
+</html>
