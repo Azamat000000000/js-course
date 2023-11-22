@@ -156,15 +156,15 @@
 //   console.log(randomArray);
 
 //15
-function generateRandomId(length = 6) {
-    const simvol = '5j2khz';
-    let id = '';
-    for (let i = 0; i < length; i++) {
-      id += simvol[Math.floor(Math.random() * simvol.length)];
-    }
-    return id;
-  }
+// function generateRandomId(length = 6) {
+//     const simvol = '5j2khz';
+//     let id = '';
+//     for (let i = 0; i < length; i++) {
+//       id += simvol[Math.floor(Math.random() * simvol.length)];
+//     }
+//     return id;
+//   }
   
-  const randomId = generateRandomId();
+//   const randomId = generateRandomId();
   
-  console.log(randomId);
+//   console.log(randomId);
