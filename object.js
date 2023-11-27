@@ -228,7 +228,7 @@
 //     this.expenses.push({ description, amount });
 //   },
 
-//   accountBalance() {
+//   accountBalance() {02,
 //     return this.totalIncome - this.totalExpense;
 //   },
 // });
